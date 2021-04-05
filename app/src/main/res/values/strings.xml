@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">COVID-19 MIS</string>
+    <string name="title_home">COVID-19 MIS</string>
+    <string name="home_title">Risk Communication for Prevention of Spread of COVID-19</string>
+    <string name="title_dash_state">Dashboard</string>
+    <string name="title_recyclerList">Dashboard</string>
+    <string name="title_dash_block">Dashboard</string>
+    <string name="level_1">ToT Report</string>
+    <string name="level_2">Cadre-SHG Report</string>
+    <string name="dash_block_villages">Villages</string>
+    <string name="dash_block_total">Total</string>
+    <string name="dash_block_trained">Trained</string>
+    <string name="dash_block_cadre_details">CADRE DETAILS</string>
+    <string name="dash_block_hint1">Trained = Villages were 80% Shg\'s trained</string>
+    <string name="dash_block_shg">SHG\'s</string>
+    <string name="dash_block_hint2">Trained = SHG\'s were 80% Shg memebers trained</string>
+    <string name="dash_block_shg_mem">SHG Members</string>
+    <string name="dash_block_crp">CRP</string>
+    <string name="dash_block_expected">Expected</string>
+    <string name="dash_block_cc">C.C. / CBO Staff</string>
+    <string name="dash_block_participated">Participated</string>
+    <string name="dash_block_grs">Gram Rojgar Sahayak</string>
+    <string name="dash_block_others">Others</string>
+    <string name="dash_state_stateNodal">State Nodals</string>
+    <string name="dash_state_expected">Expected</string>
+    <string name="dash_state_participated">Participated</string>
+    <string name="dash_state_districtNodal">District Nodals</string>
+    <string name="dash_state_blockNodal">Block Nodals</string>
+    <string name="dash_state_drp">DRP\'s</string>
+    <string name="dash_state_brp">BRP\'s</string>
+    <string name="dash_state_otherNodal">Other Nodals</string>
+    <!-- TODO: Array Lists -->
+    <string-array name="states">
+        <item>STATES</item>
+        <item>DISTRICT</item>
+        <item>BLOCK</item>
+    </string-array>
+    
+</resources>

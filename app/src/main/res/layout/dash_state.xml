@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:barchart="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.StatesDashboard">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cb_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/cb_state"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="3"
+                android:spinnerMode="dialog" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/cb_district"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="3"
+                android:spinnerMode="dialog"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/cb_block"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="3"
+                android:spinnerMode="dialog"
+                android:visibility="gone" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cb_card">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/states_graph_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tvOne"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.2"
+                            android:gravity="center_vertical"
+                            android:paddingStart="8dp"
+                            android:text="@string/dash_state_stateNodal"
+                            android:textColor="@color/colorSecondaryText"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                        <TextView
+                            android:id="@+id/tvTwo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".4"
+                            android:background="#9C27B0"
+                            android:gravity="center"
+                            android:text="@string/dash_state_expected"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="#FFF" />
+
+                        <TextView
+                            android:id="@+id/tvThree"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".4"
+                            android:background="#512da8"
+                            android:gravity="center"
+                            android:text="@string/dash_state_participated"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="#FFF" />
+                    </LinearLayout>
+
+                    <me.ithebk.barchart.BarChart
+                        android:id="@+id/bar_chart_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        app:bar_text_color="#000"
+                        barchart:bar_show_animation="true"
+                        barchart:bar_show_auto_color="true"
+                        barchart:bar_show_value="true"
+                        barchart:bar_spaces="20dp"
+                        barchart:bar_text_size="15sp"
+                        barchart:bar_type="vertical"
+                        barchart:bar_width="80dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/states_graph_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tvFour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.2"
+                            android:gravity="center_vertical"
+                            android:paddingStart="8dp"
+                            android:text="@string/dash_state_districtNodal"
+                            android:textColor="@color/colorSecondaryText"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                        <TextView
+                            android:id="@+id/tvFive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".4"
+                            android:background="#9C27B0"
+                            android:gravity="center"
+                            android:text="@string/dash_state_expected"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="#FFF" />
+
+                        <TextView
+                            android:id="@+id/tvSix"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".4"
+                            android:background="#512da8"
+                            android:gravity="center"
+                            android:text="@string/dash_state_participated"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="#FFF" />
+                    </LinearLayout>
+
+                    <me.ithebk.barchart.BarChart
+                        android:id="@+id/bar_chart_district"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        app:bar_text_color="@color/colorGreyDark"
+                        barchart:bar_show_animation="true"
+                        barchart:bar_show_auto_color="true"
+                        barchart:bar_show_value="true"
+                        barchart:bar_spaces="20dp"
+                        barchart:bar_text_size="15sp"
+                        barchart:bar_type="vertical"
+                        barchart:bar_width="80dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/states_graph_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tvSeven"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.2"
+                            android:gravity="center_vertical"
+                            android:paddingStart="8dp"
+                            android:text="@string/dash_state_blockNodal"
+                            android:textColor="@color/colorSecondaryText"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                        <TextView
+                            android:id="@+id/tvEight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".4"
+                            android:background="#9C27B0"
+                            android:gravity="center"
+                            android:text="@string/dash_state_expected"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="#FFF" />
+
+                        <TextView
+                            android:id="@+id/tvNine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".4"
+                            android:background="#512da8"
+                            android:gravity="center"
+                            android:text="@string/dash_state_participated"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="#FFF" />
+                    </LinearLayout>
+
+                    <me.ithebk.barchart.BarChart
+                        android:id="@+id/bar_chart_block"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        app:bar_text_color="#000"
+                        barchart:bar_show_animation="true"
+                        barchart:bar_show_auto_color="true"
+                        barchart:bar_show_value="true"
+                        barchart:bar_spaces="20dp"
+                        barchart:bar_text_size="15sp"
+                        barchart:bar_type="vertical"
+                        barchart:bar_width="80dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/states_graph_four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tvTen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.4"
+                            android:gravity="center_vertical"
+                            android:paddingStart="8dp"
+                            android:text="@string/dash_state_drp"
+                            android:textColor="@color/colorSecondaryText"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                        <TextView
+                            android:id="@+id/tvEleven"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3"
+                            android:background="#9C27B0"
+                            android:gravity="center"
+                            android:text="@string/dash_state_expected"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="#FFF" />
+
+                        <TextView
+                            android:id="@+id/tvTwelve"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3"
+                            android:background="#512da8"
+                            android:gravity="center"
+                            android:text="@string/dash_state_participated"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="#FFF" />
+                    </LinearLayout>
+
+                    <me.ithebk.barchart.BarChart
+                        android:id="@+id/bar_chart_drp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        app:bar_text_color="@color/colorGreyDark"
+                        barchart:bar_show_animation="true"
+                        barchart:bar_show_auto_color="true"
+                        barchart:bar_show_value="true"
+                        barchart:bar_spaces="20dp"
+                        barchart:bar_text_size="15sp"
+                        barchart:bar_type="vertical"
+                        barchart:bar_width="80dp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/states_graph_five"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tvThirteen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.4"
+                            android:gravity="center_vertical"
+                            android:paddingStart="8dp"
+                            android:text="@string/dash_state_brp"
+                            android:textColor="@color/colorSecondaryText"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                        <TextView
+                            android:id="@+id/tvFourteen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3"
+                            android:background="#9C27B0"
+                            android:gravity="center"
+                            android:text="@string/dash_state_expected"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="#FFF" />
+
+                        <TextView
+                            android:id="@+id/tvFifteen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3"
+                            android:background="#512da8"
+                            android:gravity="center"
+                            android:text="@string/dash_state_participated"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="#FFF" />
+                    </LinearLayout>
+
+                    <me.ithebk.barchart.BarChart
+                        android:id="@+id/bar_chart_brp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        app:bar_text_color="@color/colorGreyDark"
+                        barchart:bar_show_animation="true"
+                        barchart:bar_show_auto_color="true"
+                        barchart:bar_show_value="true"
+                        barchart:bar_spaces="20dp"
+                        barchart:bar_text_size="15sp"
+                        barchart:bar_type="vertical"
+                        barchart:bar_width="80dp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/states_graph_six"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tvSixteen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.2"
+                            android:gravity="center_vertical"
+                            android:paddingStart="8dp"
+                            android:text="@string/dash_state_otherNodal"
+                            android:textColor="@color/colorSecondaryText"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                        <TextView
+                            android:id="@+id/tvSeventeen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".4"
+                            android:background="#9C27B0"
+                            android:gravity="center"
+                            android:text="@string/dash_state_expected"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="#FFF" />
+
+                        <TextView
+                            android:id="@+id/tvEighteen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".4"
+                            android:background="#512da8"
+                            android:gravity="center"
+                            android:text="@string/dash_state_participated"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="#FFF" />
+                    </LinearLayout>
+
+                    <me.ithebk.barchart.BarChart
+                        android:id="@+id/bar_chart_others"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        app:bar_text_color="@color/colorGreyDark"
+                        barchart:bar_show_animation="true"
+                        barchart:bar_show_auto_color="true"
+                        barchart:bar_show_value="true"
+                        barchart:bar_spaces="20dp"
+                        barchart:bar_text_size="15sp"
+                        barchart:bar_type="vertical"
+                        barchart:bar_width="80dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

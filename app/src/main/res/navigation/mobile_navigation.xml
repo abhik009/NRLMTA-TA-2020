@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="in.pci.nrlmta.ui.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_state"
+            app:destination="@id/nav_dash_state" />
+        <action
+            android:id="@+id/action_nav_home_to_recyclerList"
+            app:destination="@id/nav_recyclerList" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_dash_state"
+        android:name="in.pci.nrlmta.ui.StatesDashboard"
+        android:label="@string/title_dash_state"
+        tools:layout="@layout/dash_state" />
+    <fragment
+        android:id="@+id/nav_recyclerList"
+        android:name="in.pci.nrlmta.ui.RecyclerFragment"
+        android:label="@string/title_recyclerList"
+        tools:layout="@layout/fragment_recycler" >
+        <action
+            android:id="@+id/action_nav_recycler_to_dashboard"
+            app:destination="@id/nav_dash_block" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_dash_block"
+        android:name="in.pci.nrlmta.ui.BlockDashboard"
+        android:label="@string/title_dash_block"
+        tools:layout="@layout/dash_block" />
+</navigation>
