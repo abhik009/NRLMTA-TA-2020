@@ -29,6 +29,7 @@
     <string name="dash_state_drp">DRP\'s</string>
     <string name="dash_state_brp">BRP\'s</string>
     <string name="dash_state_otherNodal">Other Nodals</string>
+    <string name="menu_item_one">Refresh</string>
     <!-- TODO: Array Lists -->
     <string-array name="states">
         <item>STATES</item>

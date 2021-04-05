@@ -1,16 +1,17 @@
 package in.pci.nrlmta.services;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 
 public class SessionManager {
-    private static SessionManager mInstance;
-    private static Context mContext;
+    private SessionManager mInstance;
+    private Context mContext;
     private SharedPreferences mSPref;
     private SharedPreferences.Editor mEditor;
     private static final String PREF_NAME = "NRLMTA";
 
-    public static synchronized SessionManager getInstance(Context context) {
+    public synchronized SessionManager getInstance(Context context) {
         if (mInstance == null)
             mInstance = new SessionManager(context);
         return mInstance;
